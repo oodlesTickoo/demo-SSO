@@ -1,0 +1,567 @@
+<!doctype html>
+<html lang="en" ng-app="TTRApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1">
+    <meta name="description" content="Calculator 1">
+    <link rel="icon" href="images/favicon.ico">
+    <title>New design Calculator</title>
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/nouislider.min.css">
+    
+    <link rel="stylesheet" href="bower_components/angularPrint/angularPrint.css">
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+    <div class="container" >
+        <div id="pageheading" class="row">
+            <!-- Entering pageHeading.jsp -->
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 slf-r-gradient-whimsical-bot">
+                <div class="title-bar">
+                    <h1>Net worth calculator</h1></div>
+            </div>
+            <!-- Exiting pageHeading.jsp. Execution Time : 118ms -->
+        </div>
+        <div id="page-content" class=" row content">
+            <!-- <div class="row"> -->
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <div id="tool_header" class="tool_main tool" tabindex="-1">
+                            <div class="row no-gutter header blue-bg has-animation do-animation">
+                                <div class="col-xs-12">
+                                    <div class="header-banner visible-xs has-animation do-animation"></div>
+                                    <div class="banner-wrapper display-table">
+                                        <div class="text display-table-cell vertical-align-middle text-center has-animation do-animation">
+                                            <h2>What is your net worth?</h2>
+                                            <p>Tell us about yourself to see how your net worth compares to other Canadians like you. Understanding the difference between <span class="bold">what you own</span> (your assets) and <span class="bold">what you owe</span> (your liabilities) is a great way to help you plan for the future.</p>
+                                        </div>
+                                        <div class="header-banner display-table-cell vertical-align-middle hidden-xs has-animation do-animation"><img src="header-image.jpg" class="img-responsive" alt=""></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--END ROW-->
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <div id="tool_main" class="tool_main tool">
+                            <!-- <![endif]-->
+                            <div class="row section yellow-bg animate-up tool-animate has-animation do-animation">
+                                <div class="col-sm-2 col-xs-12 large-icon-wrapper">
+                                    <div class="large-icon-inner-wrapper">
+                                        <div class="fa-stack large-icon">
+                                            <div class="fa fa-circle slf-yellow fa-stack-2x"></div>
+                                            <div class="fa fa-user fa-inverse light-yellow fa-stack-1x"></div>
+                                        </div>
+                                    </div>
+                                    <h4 class="visible-xs-table-cell vertical-align-middle uppercase has-animation tool-animate do-animation">TELL US ABOUT YOURSELF:</h4>
+                                </div>
+                                <div class="col-sm-10 col-xs-9 hidden-xs">
+                                    <h4 class="uppercase has-animation tool-animate do-animation">TELL US ABOUT YOURSELF:</h4>
+                                </div>
+                                <div class="col-xs-offset-1 col-sm-offset-0 col-sm-10 col-xs-11 has-animation inputs-animate tool-animate do-animation">
+                                    <div class="tr-row margin-top-15">
+                                        <div class="tr-col-md-5 tr-col-sm-6 col-xs-12">
+                                            <label for="province" class="question-label">Your province/territory:</label>
+                                        </div>
+                                        <div class="tr-col-md-7 tr-col-sm-4 col-xs-12">
+                                            <div class="form-group large-d inline-block vertical-align-top">
+                                                <select class="province large-d" id="province">
+                                                    <option value="none">Choose one...</option>
+                                                    <option value="ab">Alberta</option>
+                                                    <option value="bc">British Columbia</option>
+                                                    <option value="mb">Manitoba</option>
+                                                    <option value="nb">New Brunswick</option>
+                                                    <option value="nl">Newfoundland &amp; Labrador</option>
+                                                    <option value="nt">Northwest Territories</option>
+                                                    <option value="ns">Nova Scotia</option>
+                                                    <option value="nu">Nunavut</option>
+                                                    <option value="on">Ontario</option>
+                                                    <option value="pe">Prince Edward Island</option>
+                                                    <option value="qc">Quebec</option>
+                                                    <option value="sk">Saskatchewan</option>
+                                                    <option value="yt">Yukon</option>
+                                                </select>
+                                                <div class="dropdown-arrow no-pointer-events">
+                                                    <div class="fa fa-chevron-down"></div>
+                                                </div>
+                                            </div>
+                                            <div id="error-msg-province" class="error-msg error-msg-ddl" data-error-for="province">
+                                                <div class="fa fa-exclamation margin-right-5 white inline-block icon vertical-align-middle"></div>
+                                                <div class="msg" role="alert" aria-live="assertive" aria-atomic="true"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tr-row margin-top-15">
+                                        <div class="tr-col-md-5 tr-col-sm-6 col-xs-12">
+                                            <label for="age-group" class="question-label">Your age range:</label>
+                                        </div>
+                                        <div class="tr-col-md-7 tr-col-sm-4 col-xs-12">
+                                            <div class="form-group large-d inline-block vertical-align-top">
+                                                <select class="age-group large-d" id="age-group">
+                                                    <option value="none">Choose one...</option>
+                                                    <option value="under-35">Under 35</option>
+                                                    <option value="35-44">35-44 years old</option>
+                                                    <option value="45-54">45-54 years old</option>
+                                                    <option value="55-64">55-64 years old</option>
+                                                    <option value="65-older">65 and older</option>
+                                                </select>
+                                                <div class="dropdown-arrow no-pointer-events">
+                                                    <div class="fa fa-chevron-down"></div>
+                                                </div>
+                                            </div>
+                                            <div id="error-msg-age-group" class="error-msg error-msg-ddl" data-error-for="age-group">
+                                                <div class="fa fa-exclamation margin-right-5 white inline-block icon vertical-align-middle"></div>
+                                                <div class="msg" role="alert" aria-live="assertive" aria-atomic="true"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--END ROW-->
+                                    <!--END ROW-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <div id="tool_main-2" class="tool_main tool">
+                            <div class="row section blue-bg animate-up tool-animate has-animation delay do-animation">
+                                <div class="col-sm-2 col-xs-12 large-icon-wrapper dollar">
+                                    <div class="large-icon-inner-wrapper">
+                                        <div class="fa-stack large-icon delay">
+                                            <div class="fa fa-circle fa-stack-2x slf-blue"></div>
+                                            <div class="fa fa-home fa-stack-1x fa-inverse light-blue bank-icon"></div>
+                                        </div>
+                                    </div>
+                                    <h4 class="visible-xs-inline-block display-table-cell vertical-align-middle uppercase has-animation delay tool-animate do-animation">YOUR HOUSEHOLD ASSETS:</h4>
+                                </div>
+                                <div class="col-sm-10 col-xs-9 hidden-xs">
+                                    <h4 class="uppercase has-animation delay tool-animate do-animation">YOUR HOUSEHOLD ASSETS:</h4>
+                                </div>
+                                <div class="col-xs-offset-1 col-sm-offset-0 col-sm-10 col-xs-11 has-animation inputs-animate tool-animate delay do-animation">
+                                    <div class="row">
+                                        <div class="col-xs-12 margin-top-15">
+                                            <div class="question-label"><span class="bold">Your savings and investments:</span></div>
+                                        </div>
+                                    </div>
+                                    <!--END ROW-->
+                                    <div class="tr-row margin-top-15">
+                                        <div class="tr-col-sm-3 tr-col-xs-5">
+                                            <label for="rrsp" class="question-label">Registered retirement savings:<a data-popup="rrsp-popup" class="slf-blue-link bold" href="javascript:void(0);"><span class="sr-only">Registered retirement savings help</span><i class="fa fa-info-circle icon padding-left-5 slf-blue vertical-align-middle"><span class="sr-only">Information:</span>&nbsp;</i></a></label>
+                                        </div>
+                                        <div class="tr-col-md-4 tr-col-sm-5 hidden-xs">
+                                            <div class="slider" data-input="rrsp">
+                                                <div class="bar" aria-valuenow="0" aria-valuemax="10000000" aria-valuemin="0">
+                                                    <div class="rm-slider-handle horizontal" tabindex="-1" style="left: 0%;">
+                                                        <div class="circle-wrapper">
+                                                            <div class="circle-bottom">
+                                                                <div class="circle-top"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tr-col-md-5 tr-col-sm-4 tr-col-xs-6">
+                                            <div class="form-input">
+                                                <input class="dollar" id="rrsp" type="text" pattern="[0-9,]*" maxlength="8"><span class="dollar-sign no-pointer-events light-grey-2">$</span></div>
+                                            <div class="error-msg" data-error-for="rrsp">
+                                                <div class="fa fa-exclamation margin-right-5 white inline-block icon vertical-align-middle"></div>
+                                                <div class="msg" role="alert" aria-live="assertive" aria-atomic="true"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--END ROW-->
+                                    <div class="tr-row margin-top-15">
+                                        <div class="tr-col-sm-3 tr-col-xs-5">
+                                            <label for="tfsa" class="question-label">Tax-free savings accounts (TFSA):<a data-popup="tfsa-popup" class="slf-blue-link bold" href="javascript:void(0);"><span class="sr-only">Tax-free savings account help</span><i class="fa fa-info-circle icon padding-left-5 slf-blue vertical-align-middle"><span class="sr-only">Information:</span>&nbsp;</i></a></label>
+                                        </div>
+                                        <div class="tr-col-md-4 tr-col-sm-5 hidden-xs">
+                                            <div class="slider" data-input="tfsa">
+                                                <div class="bar" aria-valuenow="0" aria-valuemax="1000000" aria-valuemin="0">
+                                                    <div class="rm-slider-handle horizontal" tabindex="-1" style="left: 0%;">
+                                                        <div class="circle-wrapper">
+                                                            <div class="circle-bottom">
+                                                                <div class="circle-top"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tr-col-md-5 tr-col-sm-4 tr-col-xs-6">
+                                            <div class="form-input">
+                                                <input class="dollar" id="tfsa" type="text" pattern="[0-9,]*" maxlength="7"><span class="dollar-sign no-pointer-events light-grey-2">$</span></div>
+                                            <div class="error-msg" data-error-for="tfsa">
+                                                <div class="fa fa-exclamation margin-right-5 white inline-block icon vertical-align-middle"></div>
+                                                <div class="msg" role="alert" aria-live="assertive" aria-atomic="true"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--END ROW-->
+                                    <div class="tr-row margin-top-15">
+                                        <div class="tr-col-sm-3 tr-col-xs-5">
+                                            <label for="non-reg" class="question-label">Non-registered savings and investments:<a data-popup="non-reg-popup" class="slf-blue-link bold" href="javascript:void(0);"><span class="sr-only">Non-registered savings and investments help</span><i class="fa fa-info-circle icon padding-left-5 slf-blue vertical-align-middle"><span class="sr-only">Information:</span>&nbsp;</i></a></label>
+                                        </div>
+                                        <div class="tr-col-md-4 tr-col-sm-5 hidden-xs">
+                                            <div class="slider" data-input="non-reg">
+                                                <div class="bar" aria-valuenow="0" aria-valuemax="10000000" aria-valuemin="0">
+                                                    <div class="rm-slider-handle horizontal" tabindex="-1" style="left: 0%;">
+                                                        <div class="circle-wrapper">
+                                                            <div class="circle-bottom">
+                                                                <div class="circle-top"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tr-col-md-5 tr-col-sm-4 tr-col-xs-6">
+                                            <div class="form-input">
+                                                <input class="dollar" id="non-reg" type="text" pattern="[0-9,]*" maxlength="8"><span class="dollar-sign no-pointer-events light-grey-2">$</span></div>
+                                            <div class="error-msg" data-error-for="non-reg">
+                                                <div class="fa fa-exclamation margin-right-5 white inline-block icon vertical-align-middle"></div>
+                                                <div class="msg" role="alert" aria-live="assertive" aria-atomic="true"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--END ROW-->
+                                    <div class="row">
+                                        <div class="col-xs-12 white-border"></div>
+                                    </div>
+                                    <!--END ROW-->
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <div class="question-label"><span class="bold">Your property and other assets:</span></div>
+                                        </div>
+                                    </div>
+                                    <!--END ROW-->
+                                    <div class="tr-row margin-top-15">
+                                        <div class="tr-col-sm-3 tr-col-xs-5">
+                                            <label for="home-value" class="question-label">Home value:<a data-popup="home-value-popup" class="slf-blue-link bold" href="javascript:void(0);"><span class="sr-only">Home value help</span><i class="fa fa-info-circle icon padding-left-5 slf-blue vertical-align-middle"><span class="sr-only">Information:</span>&nbsp;</i></a></label>
+                                        </div>
+                                        <div class="tr-col-md-4 tr-col-sm-5 hidden-xs">
+                                            <div class="slider" data-input="home-value">
+                                                <div class="bar" aria-valuenow="0" aria-valuemax="10000000" aria-valuemin="0">
+                                                    <div class="rm-slider-handle horizontal" tabindex="-1" style="left: 0%;">
+                                                        <div class="circle-wrapper">
+                                                            <div class="circle-bottom">
+                                                                <div class="circle-top"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tr-col-md-5 tr-col-sm-4 tr-col-xs-6">
+                                            <div class="form-input">
+                                                <input class="dollar" id="home-value" type="text" pattern="[0-9,]*" maxlength="8"><span class="dollar-sign no-pointer-events light-grey-2">$</span></div>
+                                            <div class="error-msg" data-error-for="home-value">
+                                                <div class="fa fa-exclamation margin-right-5 white inline-block icon vertical-align-middle"></div>
+                                                <div class="msg" role="alert" aria-live="assertive" aria-atomic="true"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--END ROW-->
+                                    <div class="tr-row margin-top-15">
+                                        <div class="tr-col-sm-3 tr-col-xs-5">
+                                            <label for="other-properties" class="question-label">Other properties:<a data-popup="other-properties-popup" class="slf-blue-link bold" href="javascript:void(0);"><span class="sr-only">Other properties help</span><i class="fa fa-info-circle icon padding-left-5 slf-blue vertical-align-middle"><span class="sr-only">Information:</span>&nbsp;</i></a></label>
+                                        </div>
+                                        <div class="tr-col-md-4 tr-col-sm-5 hidden-xs">
+                                            <div class="slider" data-input="other-properties">
+                                                <div class="bar" aria-valuenow="0" aria-valuemax="10000000" aria-valuemin="0">
+                                                    <div class="rm-slider-handle horizontal" tabindex="-1" style="left: 0%;">
+                                                        <div class="circle-wrapper">
+                                                            <div class="circle-bottom">
+                                                                <div class="circle-top"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tr-col-md-5 tr-col-sm-4 tr-col-xs-6">
+                                            <div class="form-input">
+                                                <input class="dollar" id="other-properties" type="text" pattern="[0-9,]*" maxlength="8"><span class="dollar-sign no-pointer-events light-grey-2">$</span></div>
+                                            <div class="error-msg" data-error-for="other-properties">
+                                                <div class="fa fa-exclamation margin-right-5 white inline-block icon vertical-align-middle"></div>
+                                                <div class="msg" role="alert" aria-live="assertive" aria-atomic="true"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--END ROW-->
+                                    <div class="tr-row margin-top-15">
+                                        <div class="tr-col-sm-3 tr-col-xs-5">
+                                            <label for="vehicles" class="question-label">Vehicle(s):<a data-popup="vehicles-popup" class="slf-blue-link bold" href="javascript:void(0);"><span class="sr-only">Vehicles help</span><i class="fa fa-info-circle icon padding-left-5 slf-blue vertical-align-middle"><span class="sr-only">Information:</span>&nbsp;</i></a></label>
+                                        </div>
+                                        <div class="tr-col-md-4 tr-col-sm-5 hidden-xs">
+                                            <div class="slider" data-input="vehicles">
+                                                <div class="bar" aria-valuenow="0" aria-valuemax="10000000" aria-valuemin="0">
+                                                    <div class="rm-slider-handle horizontal" tabindex="-1" style="left: 0%;">
+                                                        <div class="circle-wrapper">
+                                                            <div class="circle-bottom">
+                                                                <div class="circle-top"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tr-col-md-5 tr-col-sm-4 tr-col-xs-6">
+                                            <div class="form-input">
+                                                <input class="dollar" id="vehicles" type="text" pattern="[0-9,]*" maxlength="8"><span class="dollar-sign no-pointer-events light-grey-2">$</span></div>
+                                            <div class="error-msg" data-error-for="vehicles">
+                                                <div class="fa fa-exclamation margin-right-5 white inline-block icon vertical-align-middle"></div>
+                                                <div class="msg" role="alert" aria-live="assertive" aria-atomic="true"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--END ROW-->
+                                    <div class="tr-row margin-top-15">
+                                        <div class="tr-col-sm-3 tr-col-xs-5">
+                                            <label for="other-valuables" class="question-label">Other valuables:<a data-popup="other-valuables-popup" class="slf-blue-link bold" href="javascript:void(0);"><span class="sr-only">Other valuables help</span><i class="fa fa-info-circle icon padding-left-5 slf-blue vertical-align-middle"><span class="sr-only">Information:</span>&nbsp;</i></a></label>
+                                        </div>
+                                        <div class="tr-col-md-4 tr-col-sm-5 hidden-xs">
+                                            <div class="slider" data-input="other-valuables">
+                                                <div class="bar" aria-valuenow="0" aria-valuemax="10000000" aria-valuemin="0">
+                                                    <div class="rm-slider-handle horizontal" tabindex="-1" style="left: 0%;">
+                                                        <div class="circle-wrapper">
+                                                            <div class="circle-bottom">
+                                                                <div class="circle-top"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tr-col-md-5 tr-col-sm-4 tr-col-xs-6">
+                                            <div class="form-input">
+                                                <input class="dollar" id="other-valuables" type="text" pattern="[0-9,]*" maxlength="8"><span class="dollar-sign no-pointer-events light-grey-2">$</span></div>
+                                            <div class="error-msg" data-error-for="other-valuables">
+                                                <div class="fa fa-exclamation margin-right-5 white inline-block icon vertical-align-middle"></div>
+                                                <div class="msg" role="alert" aria-live="assertive" aria-atomic="true"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--END ROW-->
+                                </div>
+                            </div>
+                            <!--END ROW-->
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <div id="tool_main-3" class="tool_main tool">
+                            <!-- <![endif]-->
+                            <div class="row section yellow-bg animate-up tool-animate has-animation delay-2 do-animation" style="transition-delay: 0ms; animation-delay: 0ms;">
+                                <div class="col-sm-2 col-xs-12 large-icon-wrapper">
+                                    <div class="large-icon-inner-wrapper">
+                                        <div class="fa-stack large-icon" style="transition-delay: -0.7ms; animation-delay: -0.7ms;">
+                                            <div class="fa fa-circle slf-yellow fa-stack-2x"></div>
+                                            <div class="fa fa-institution fa-inverse light-yellow fa-stack-1x"></div>
+                                        </div>
+                                    </div>
+                                    <h4 class="visible-xs-inline-block vertical-align-middle uppercase has-animation tool-animate do-animation" style="transition-delay: -0.25ms; animation-delay: -0.25ms;">YOUR HOUSEHOLD LIABILITIES:</h4>
+                                </div>
+                                <div class="col-sm-10 col-xs-9 hidden-xs">
+                                    <h4 class="uppercase has-animation tool-animate do-animation" style="transition-delay: -0.25ms; animation-delay: -0.25ms;">YOUR HOUSEHOLD LIABILITIES:</h4>
+                                </div>
+                                <div class="col-xs-offset-1 col-sm-offset-0 col-sm-10 col-xs-11 has-animation inputs-animate tool-animate do-animation" style="transition-delay: -0.1ms; animation-delay: -0.1ms;">
+                                    <div class="tr-row margin-top-15">
+                                        <div class="tr-col-sm-3 tr-col-xs-5">
+                                            <label for="home-mortgage" class="question-label">Home mortgage:<a data-popup="home-mortgage-popup" class="slf-blue-link bold" href="javascript:void(0);"><span class="sr-only">Home mortgage help</span><i class="fa fa-info-circle icon padding-left-5 slf-blue vertical-align-middle"><span class="sr-only">Information:</span>&nbsp;</i></a></label>
+                                        </div>
+                                        <div class="tr-col-md-4 tr-col-sm-5 hidden-xs">
+                                            <div class="slider" data-input="home-mortgage">
+                                                <div class="bar" aria-valuenow="0" aria-valuemax="10000000" aria-valuemin="0">
+                                                    <div class="rm-slider-handle horizontal" tabindex="-1" style="left: 0%;">
+                                                        <div class="circle-wrapper">
+                                                            <div class="circle-bottom">
+                                                                <div class="circle-top"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tr-col-md-5 tr-col-sm-4 tr-col-xs-6">
+                                            <div class="form-input">
+                                                <input class="dollar" id="home-mortgage" type="text" pattern="[0-9,]*" maxlength="8"><span class="dollar-sign no-pointer-events light-grey-2">$</span></div>
+                                            <div class="error-msg" data-error-for="home-mortgage">
+                                                <div class="fa fa-exclamation margin-right-5 white inline-block icon vertical-align-middle"></div>
+                                                <div class="msg" role="alert" aria-live="assertive" aria-atomic="true"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--END ROW-->
+                                    <div class="tr-row margin-top-15">
+                                        <div class="tr-col-sm-3 tr-col-xs-5">
+                                            <label for="other-mortgages" class="question-label">Other mortgages:<a data-popup="other-mortgages-popup" class="slf-blue-link bold" href="javascript:void(0);"><span class="sr-only">Other mortgages help</span><i class="fa fa-info-circle icon padding-left-5 slf-blue vertical-align-middle"><span class="sr-only">Information:</span>&nbsp;</i></a></label>
+                                        </div>
+                                        <div class="tr-col-md-4 tr-col-sm-5 hidden-xs">
+                                            <div class="slider" data-input="other-mortgages">
+                                                <div class="bar" aria-valuenow="0" aria-valuemax="10000000" aria-valuemin="0">
+                                                    <div class="rm-slider-handle horizontal" tabindex="-1" style="left: 0%;">
+                                                        <div class="circle-wrapper">
+                                                            <div class="circle-bottom">
+                                                                <div class="circle-top"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tr-col-md-5 tr-col-sm-4 tr-col-xs-6">
+                                            <div class="form-input">
+                                                <input class="dollar" id="other-mortgages" type="text" pattern="[0-9,]*" maxlength="8"><span class="dollar-sign no-pointer-events light-grey-2">$</span></div>
+                                            <div class="error-msg" data-error-for="other-mortgages">
+                                                <div class="fa fa-exclamation margin-right-5 white inline-block icon vertical-align-middle"></div>
+                                                <div class="msg" role="alert" aria-live="assertive" aria-atomic="true"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--END ROW-->
+                                    <div class="tr-row margin-top-15">
+                                        <div class="tr-col-sm-3 tr-col-xs-5">
+                                            <label for="credit-cards" class="question-label">Credit cards:</label>
+                                        </div>
+                                        <div class="tr-col-md-4 tr-col-sm-5 hidden-xs">
+                                            <div class="slider" data-input="credit-cards">
+                                                <div class="bar" aria-valuenow="0" aria-valuemax="1000000" aria-valuemin="0">
+                                                    <div class="rm-slider-handle horizontal" tabindex="-1" style="left: 0%;">
+                                                        <div class="circle-wrapper">
+                                                            <div class="circle-bottom">
+                                                                <div class="circle-top"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tr-col-md-5 tr-col-sm-4 tr-col-xs-6">
+                                            <div class="form-input">
+                                                <input class="dollar" id="credit-cards" type="text" pattern="[0-9,]*" maxlength="7"><span class="dollar-sign no-pointer-events light-grey-2">$</span></div>
+                                            <div class="error-msg" data-error-for="credit-cards">
+                                                <div class="fa fa-exclamation margin-right-5 white inline-block icon vertical-align-middle"></div>
+                                                <div class="msg" role="alert" aria-live="assertive" aria-atomic="true"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--END ROW-->
+                                    <div class="tr-row margin-top-15">
+                                        <div class="tr-col-sm-3 tr-col-xs-5">
+                                            <label for="line-of-credit" class="question-label">Lines of credit:</label>
+                                        </div>
+                                        <div class="tr-col-md-4 tr-col-sm-5 hidden-xs">
+                                            <div class="slider" data-input="line-of-credit">
+                                                <div class="bar" aria-valuenow="0" aria-valuemax="1000000" aria-valuemin="0">
+                                                    <div class="rm-slider-handle horizontal" tabindex="-1" style="left: 0%;">
+                                                        <div class="circle-wrapper">
+                                                            <div class="circle-bottom">
+                                                                <div class="circle-top"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tr-col-md-5 tr-col-sm-4 tr-col-xs-6">
+                                            <div class="form-input">
+                                                <input class="dollar" id="line-of-credit" type="text" pattern="[0-9,]*" maxlength="7"><span class="dollar-sign no-pointer-events light-grey-2">$</span></div>
+                                            <div class="error-msg" data-error-for="line-of-credit">
+                                                <div class="fa fa-exclamation margin-right-5 white inline-block icon vertical-align-middle"></div>
+                                                <div class="msg" role="alert" aria-live="assertive" aria-atomic="true"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--END ROW-->
+                                    <div class="tr-row margin-top-15">
+                                        <div class="tr-col-sm-3 tr-col-xs-5">
+                                            <label for="loans" class="question-label">Loans:<a data-popup="loans-popup" class="slf-blue-link bold" href="javascript:void(0);"><span class="sr-only">Loans help</span><i class="fa fa-info-circle icon padding-left-5 slf-blue vertical-align-middle"><span class="sr-only">Information:</span>&nbsp;</i></a></label>
+                                        </div>
+                                        <div class="tr-col-md-4 tr-col-sm-5 hidden-xs">
+                                            <div class="slider" data-input="loans">
+                                                <div class="bar" aria-valuenow="0" aria-valuemax="1000000" aria-valuemin="0">
+                                                    <div class="rm-slider-handle horizontal" tabindex="-1" style="left: 0%;">
+                                                        <div class="circle-wrapper">
+                                                            <div class="circle-bottom">
+                                                                <div class="circle-top"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tr-col-md-5 tr-col-sm-4 tr-col-xs-6">
+                                            <div class="form-input">
+                                                <input class="dollar" id="loans" type="text" pattern="[0-9,]*" maxlength="7"><span class="dollar-sign no-pointer-events light-grey-2">$</span></div>
+                                            <div class="error-msg" data-error-for="loans">
+                                                <div class="fa fa-exclamation margin-right-5 white inline-block icon vertical-align-middle"></div>
+                                                <div class="msg" role="alert" aria-live="assertive" aria-atomic="true"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--END ROW-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <div id="tool_main-4" class="tool_main tool">
+                            <div class="row">
+                                <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-8 col-xs-offset-2 text-center margin-top-10"><a class="cta-button animate-up-button has-animation js-btn-calculate do-animation" href="javascript:void(0);" style="transition-delay: 0ms; animation-delay: 0ms;">Calculate your results</a></div>
+                            </div>
+                            <!--END ROW-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- </div> -->
+        </div>
+    </div>
+    <script src="js/jquery-2.2.4.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/jquery.validate.js" type="text/javascript"></script>
+    <script src="js/angular.min.js" type="text/javascript"></script>
+    <script src="js/bootstrap-select.min.js" type="text/javascript"></script>
+    <script src="js/ui-bootstrap-tpls-1.3.3.min.js" type="text/javascript"></script>
+    <script src="js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="js/app.js" type="text/javascript"></script>
+    <script src="js/controller.js" type="text/javascript"></script>
+    <script src="js/AgeCalculatorService.js" type="text/javascript"></script>
+    <script src="js/TaxRateCalculatorService.js" type="text/javascript"></script>
+    <script src="js/SGCRateCalculator.js" type="text/javascript"></script>
+    <script src="js/WithoutSSCalculatorService.js" type="text/javascript"></script>
+    <script src="js/WithSSCalculatorService.js" type="text/javascript"></script>
+    <script src="js/nouislider.min.js" type="text/javascript"></script>
+    <script src="js/wNumb.js" type="text/javascript"></script>
+    <script src="bower_components/angularPrint/angularPrint.js" type="text/javascript"></script>
+    <script src="js/hc/highcharts.js" type="text/javascript"></script>
+    <script src="js/hc/data.js" type="text/javascript"></script>
+    <script src="js/hc/exporting.js" type="text/javascript"></script>
+    <script src="js/hc/sand-signika.js" type="text/javascript"></script>
+    <script src="js/hc/donutChartService.js" type="text/javascript"></script>
+    <script src="js/hc/chartService.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.2.61/jspdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/2.0.16/jspdf.plugin.autotable.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta1/html2canvas.js"></script>
+    <script src="js/rgbcolor.js" type="text/javascript"></script>
+    <script src="js/StackBlur.js" type="text/javascript"></script>
+    <script src="js/canvg.min.js" type="text/javascript"></script>
+    <script src="js/PdfMaker.js" type="text/javascript"></script>
+</body>
+
+</html>
